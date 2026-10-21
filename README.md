@@ -2,7 +2,7 @@
 
 An offline, standard-library CLI for checking explicit normalized synthetic dataset split assignments. It detects whether an exact ID appears in more than one of `train`, `validation`, and `test`, and reports every physical input row for each overlapping ID. It does not generate splits or assess semantic similarity, leakage, data quality, or model quality.
 
-Each nonblank JSONL row must contain exactly `id` (a nonempty string) and `split` (one of the three names). Repeating the same ID and split is invalid input. IDs compare as exact Unicode strings without normalization. Input is validated in full before a result is printed.
+Blank physical rows are invalid. Each JSONL row must contain exactly `id` (a nonempty string) and `split` (one of the three names). Repeating the same ID and split is invalid input. IDs compare as exact Unicode strings without normalization. Input is validated in full before a result is printed.
 
 Install with `python -m pip install .`, then run:
 
